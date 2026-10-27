@@ -1,0 +1,19 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Nicewrite Postfach</title><meta name="color-scheme" content="light dark"><style>
+body{font:16px/1.4 system-ui,sans-serif;margin:0;padding:16px;background:Canvas;color:CanvasText}
+section{border:1px solid #8884;border-radius:14px;padding:12px;margin:0 0 16px}
+section.done{opacity:.45} h2{font-size:17px;margin:6px 0 10px}
+.imgs{display:flex;gap:8px;overflow-x:auto} .imgs img{height:220px;border-radius:8px}
+textarea{width:100%;box-sizing:border-box;min-height:110px;margin:6px 0;font:inherit}
+button{font:inherit;padding:8px 14px;border-radius:10px;border:0;background:#2A7464;color:#fff}
+</style></head><body><h1>Postfach</h1>
+<p>Bilder lange drücken → „In Fotos sichern“; in TikTok als Foto-Beitrag posten, Trend-Sound wählen, Text einfügen.
+<a href="pinterest.csv">Pinterest-CSV</a> für „Pins in großer Zahl erstellen“.</p>
+<p>Nichts zu tun.</p>
+<script>
+function cp(b){const t=b.previousElementSibling;navigator.clipboard.writeText(t.value).then(()=>{b.textContent='Kopiert';});}
+function done(c){const s=c.closest('section');s.classList.toggle('done',c.checked);try{localStorage.setItem('done:'+s.dataset.id,c.checked?'1':'')}catch(e){}}
+document.querySelectorAll('section').forEach(s=>{let v='';try{v=localStorage.getItem('done:'+s.dataset.id)}catch(e){}
+if(v){s.classList.add('done');s.querySelector('input').checked=true}});
+</script></body></html>
